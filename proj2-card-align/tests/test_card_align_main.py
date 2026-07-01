@@ -30,9 +30,9 @@ def sample_images():
 
 
 # ── Figure builders ───────────────────────────────────────────────────────────
-def test_edges_and_corners_figure(sample_images):
+def test_edges_and_box_figure(sample_images):
     path, gray = sample_images[0]
-    fig = main_mod._edges_and_corners_figure("sample", gray)
+    fig = main_mod._edges_and_box_figure("sample", gray)
     assert fig is not None
     import matplotlib.pyplot as plt
     plt.close(fig)
@@ -61,10 +61,10 @@ def test_save_results_writes_files(sample_images, tmp_path, monkeypatch):
 
     out = tmp_path / "results"
     assert out.is_dir()
-    # Each image yields an _aligned and an _edges_and_corners file, plus showcase.
+    # Each image yields an _aligned and an _edges_and_box file, plus showcase.
     files = list(out.glob("*.png"))
     assert any(f.name.endswith("_aligned.png") for f in files)
-    assert any(f.name.endswith("_edges_and_corners.png") for f in files)
+    assert any(f.name.endswith("_edges_and_box.png") for f in files)
     assert (out / "showcase_all.png").is_file()
 
 
