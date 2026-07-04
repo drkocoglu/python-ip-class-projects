@@ -73,15 +73,15 @@ def parse_truth(filename: str | Path) -> list[tuple[str, str]]:
     return pairs
 
 
-def forced_labels(preds: list[tuple], truth: list[tuple]) -> dict:
-    """Per-detection labels that every optimal detection/truth assignment agrees on.
+def optimal_assignments(preds: list[tuple], truth: list[tuple]) -> list[tuple]:
+    """All maximum-score assignments of detections to ground-truth pairs.
 
     ``preds`` holds per-card (rank, suit) predictions (either may be ``None``);
     suit agreement is weighted higher because it anchors the assignment.
     """
     m = min(len(preds), len(truth))
     if m == 0:
-        return {}
+        return []
     best, argmax = -1, []
     for perm in permutations(range(len(truth)), m):
         score = 0
@@ -94,6 +94,15 @@ def forced_labels(preds: list[tuple], truth: list[tuple]) -> dict:
             best, argmax = score, [perm]
         elif score == best:
             argmax.append(perm)
+    return argmax
+
+
+def forced_labels(preds: list[tuple], truth: list[tuple]) -> dict:
+    """Per-detection labels that every optimal assignment agrees on."""
+    argmax = optimal_assignments(preds, truth)
+    if not argmax:
+        return {}
+    m = len(argmax[0])
     out = {}
     for c in range(m):
         ranks = {truth[p[c]][0] for p in argmax}
