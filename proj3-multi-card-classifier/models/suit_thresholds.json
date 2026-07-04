@@ -1,0 +1,28 @@
+{
+ "method": "binary shape statistics (image processing only)",
+ "structure": "hand-designed fixed if/else; only values searched",
+ "tree": {
+  "stat": "top_bot",
+  "thr": 0.11,
+  "gt": {
+   "suit": "Hearts"
+  },
+  "le": {
+   "stat": "solidity",
+   "thr": 0.8,
+   "le": {
+    "suit": "Clubs"
+   },
+   "gt": {
+    "stat": "aspect",
+    "thr": 1.15,
+    "gt": {
+     "suit": "Diamonds"
+    },
+    "le": {
+     "suit": "Spades"
+    }
+   }
+  }
+ }
+}
