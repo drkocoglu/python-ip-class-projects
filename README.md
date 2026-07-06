@@ -375,23 +375,3 @@ folder shapes:
 
 **Don't delete these files** — they are what make imports work when pytest is run
 from the repository root.
-
----
-
-## Keywords
-
-`image processing` · `computer vision` · `Python` · `MATLAB-to-Python port` ·
-`from-scratch algorithms` · `NumPy` · `OpenCV` · `scikit-image` · `scikit-learn`
-· `SciPy` · `HSV colour classification` · `thresholding` · `2-D convolution` ·
-`Sobel edge detection` · `gradient magnitude` · `image alignment` ·
-`rotation / affine geometric transforms` · `binarization` ·
-`morphological operations` · `hole filling` · `connected-component analysis` ·
-`region properties` · `feature extraction` · `Histogram of Oriented Gradients
-(HOG)` · `Dalal–Triggs` · `support vector machine (SVM / LinearSVC)` ·
-`StandardScaler` · `decision-tree thresholding` · `data augmentation` ·
-`playing-card recognition` · `optical character / glyph recognition` ·
-`Fourier transform` · `FFT` · `frequency-domain filtering` ·
-`Butterworth low-pass / high-pass / band-pass` · `spectral spike thresholding` ·
-`illumination correction` · `skeletonization / thinning` · `centerline extraction`
-· `graph longest-path (BFS)` · `background subtraction` · `object tracking` ·
-`video processing` · `C. elegans microscopy` · `uv` · `pytest`
