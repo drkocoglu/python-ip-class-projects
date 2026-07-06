@@ -1,0 +1,20 @@
+[project]
+name = "python-ip-class-projects"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "matplotlib>=3.11.0",
+    "numpy>=2.4.6",
+    "opencv-python>=4.13.0.92",
+    "pillow>=12.2.0",
+    "pytest>=9.1.1",
+    "scikit-image>=0.26.0",
+    "scikit-learn==1.8.0",
+    "tifffile>=2026.3.3",
+]
+
+[tool.pyright]
+extraPaths = ["proj4-fourier-filtering/src","proj5-celegan-tracking/src"]   # correct: src contains proj4_ip
+# NOT "proj4/src/proj4_ip"   # too deep — imports would break again
